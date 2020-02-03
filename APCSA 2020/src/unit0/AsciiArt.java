@@ -2,10 +2,10 @@ package unit0;
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Kaitlyn Wang
+//Date - 02/03/2020
+//Class - APCSA P2
+
 
 public class AsciiArt
 {
@@ -23,6 +23,8 @@ public class AsciiArt
 		System.out.println("                 |");
 		System.out.println("                / \\");
 		System.out.println("               /   \\");
-		System.out.println("              /     \\");
+		System.out.println("              /     \\ \n \n \n");
+		
+		System.out.println(" It's a cat");
 	}
 }

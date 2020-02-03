@@ -2,10 +2,10 @@ package unit0;
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Kaitlyn Wang
+//Date - 02/03/2020
+//Class - APCSA P2
+
 
 public class AsciiBox
 {
