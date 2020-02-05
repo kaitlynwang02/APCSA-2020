@@ -15,18 +15,15 @@ public class Distance
 {
 	private int xOne,yOne,xTwo,yTwo;
 	private double distance;
-	private int xDif;
-	private int yDif;
 
 	public Distance()
 	{
-		xDif = xTwo - xOne;
-		yDif = yTwo - yOne;
+		
 	}
 	
 	public Distance(int x1, int y1, int x2, int y2)
 	{
-		setCoordinates(x2, y1, x2, y2);
+		setCoordinates(x1, y1, x2, y2);
 	}
 
 	public void setCoordinates(int x1, int y1, int x2, int y2)
@@ -39,19 +36,20 @@ public class Distance
 
 	public void calcDistance()
 	{
-		distance = (double)Math.sqrt(Math.pow(xDif, xDif) + Math.pow(yDif, yDif));
+		int xDif = xTwo - xOne;
+		int yDif = yTwo - yOne;
+		double xPow = (double) Math.pow(xDif, 2);
+		double yPow = (double) Math.pow(yDif, 2);
+		distance = Math.sqrt(xPow + yPow);
 	}
 
 	
 	public void print()
 	{
-		System.out.println("distance == " +distance);
+		System.out.println("distance == " +String.format("%.3f", distance));
 	}
 	
 	//complete print or the toString
 
-	public String toString()
-	{
-		return "distance ==" +distance;
-	}
+	
 }

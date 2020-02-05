@@ -33,6 +33,7 @@ public class DistanceRunner
 		test.calcDistance();
 		test.print();
 		
+		
 		//add test cases	
 			
 	}
