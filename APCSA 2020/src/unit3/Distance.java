@@ -18,7 +18,11 @@ public class Distance
 
 	public Distance()
 	{
-		
+		xOne = 0;
+		yOne = 0;
+		xTwo = 0;
+		yTwo = 0;
+		distance = 0;
 	}
 	
 	public Distance(int x1, int y1, int x2, int y2)
