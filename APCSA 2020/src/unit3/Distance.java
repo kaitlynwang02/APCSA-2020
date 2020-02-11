@@ -53,6 +53,7 @@ public class Distance
 		System.out.println("distance == " +String.format("%.3f", distance));
 	}
 	
+	
 	//complete print or the toString
 
 	
