@@ -1,9 +1,11 @@
 package elevenslab1;
+
+import java.util.ArrayList;
+import java.util.Random;
 /**
  * This class provides a convenient way to test shuffling methods.
  */
 public class Shuffler {
-	private static int[] cards = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52};
 	/**
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
@@ -13,17 +15,15 @@ public class Shuffler {
 	/**
 	 * The number of values to shuffle.
 	 */
-	private static final int VALUE_COUNT = 53;
+	private static final int VALUE_COUNT = 4;
 
 	/**
 	 * Tests shuffling methods.
 	 * @param args is not used.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println("Results of " + SHUFFLE_COUNT +
 								 " consecutive perfect shuffles:");
-		
-		//System.out.println(Shuffler.perfectShuffle());
 		
 		
 		int[] values1 = new int[VALUE_COUNT];
@@ -42,8 +42,7 @@ public class Shuffler {
 
 		System.out.println("Results of " + SHUFFLE_COUNT +
 								 " consecutive efficient selection shuffles:");
-	
-		//System.out.println(Shuffler.selectionShuffle());
+
 		
 		int[] values2 = new int[VALUE_COUNT];
 		for (int i = 0; i < values2.length; i++) {
@@ -59,7 +58,7 @@ public class Shuffler {
 		}
 		System.out.println();
 		
-	}
+	}*/
 
 
 	/**
@@ -68,16 +67,44 @@ public class Shuffler {
 	 * the cards in one half with the cards in the other.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void perfectShuffle(int [] values) {
+	public static ArrayList<Card> perfectShuffle(ArrayList<Card> values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 	
-		int[] shuffled = new int[52];
+		ArrayList<Card> shuffled = new ArrayList<Card>();
+		int x;
+		
+		if (values.size() > 0) {
+			if (values.size() % 2 == 0) {
+				x = (values.size()/2);
+				for (int i = 0; i < x; i++) {
+					shuffled.add(values.get(i));
+					shuffled.add(values.get(i + x));
+				} 	
+			}
+			else {
+				x = (values.size()/2) + 1;
+				for (int i = 0; i < x-1; i++) {
+					shuffled.add(values.get(i));
+					shuffled.add(values.get(i + x));
+				} 
+				shuffled.add(values.get(x));
+			}
+			
+		}
+		
+		for (int i = 0; i < values.size(); i++) {
+			values.set(i, shuffled.get(i));
+		}
+		
+		return values;
+		
+		/*int[] values = new int[52];
 		
 		int k = 0;
 		
 		for (int j = 0; j <= 25; j++)
 		{
-			values[j] = shuffled[k];
+			shuffled[k] = values[j];
 			k = k+2;
 		}
 		
@@ -85,10 +112,10 @@ public class Shuffler {
 		
 		for (int j = 26; j <= 51; j++) 
 		{
-			values[j] = shuffled [k];
+			shuffled[k] = values[j];
 			k = k+2;
 		}
-		//return cards;
+		//return shuffled;*/
 	}
 
 	/**
@@ -102,10 +129,27 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
+	public static ArrayList<Card> selectionShuffle(ArrayList<Card> values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 		
-		int Min = 0;
+		
+		Random rand = new Random();
+		
+		int x = 0;
+		
+		Card y;
+		
+		for (int i = values.size()-1; i > 0; i--) {
+			x = rand.nextInt(i);
+			y = values.get(x);
+			values.set(x, values.get(i));
+			values.set(i, y);
+			
+		}
+		
+		return values;
+		
+		/*int Min = 0;
 		int Max = 0;
 		
 		int r = 0;
@@ -116,7 +160,7 @@ public class Shuffler {
 			r = Min + (int)(Math.random() * ((Max - Min) + 1));
 			values[k] = values[r];
 		}
-		//return cards;
+		//return cards;*/
 	}
 	
 	// flip method
@@ -137,8 +181,17 @@ public class Shuffler {
 		int[] first = new int[length];
 		int[] second = new int[length];
 		
-		for (int i = 0; i < first.length; i++)
-			if (first[i] != second[i])
-				
+		int x = 0;
+		
+		for (int i = 0; i < length; i++) {
+			for (int j = 0; i < length; j++) {
+			if (first[i] != second[j]) {
+				x++; }
+			}	
+		}
+		if (x==length-1) 
+			return true;
+		else
+			return false;
 	}
 }

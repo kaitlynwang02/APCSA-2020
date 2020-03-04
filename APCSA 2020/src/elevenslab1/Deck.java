@@ -4,6 +4,7 @@ package elevenslab1;
 //Name -
 
 import java.util.List;
+import java.util.Random;
 
 import elevenslab1.Card;
 
@@ -24,7 +25,7 @@ public class Deck
 	
 	//public static int POINTVALUES[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 	
-	private List<Card> cards;
+	private ArrayList<Card> cards;
 	private int top, size;
 
    //make a Deck constructor
@@ -38,7 +39,7 @@ public class Deck
 		}
 		size = cards.size();
 		top = size-1;
-		//shuffle();
+		selectionShuffle(cards);
 	}
 	
    	//isEmpty method
@@ -69,6 +70,28 @@ public class Deck
 		return size;
 	}
 	
+	//shuffle method
+	
+	public ArrayList<Card> selectionShuffle(ArrayList<Card> values) {
+	
+		
+		Random rand = new Random();
+		
+		int x = 0;
+		
+		Card y;
+		
+		for (int i = values.size()-1; i > 0; i--) {
+			x = rand.nextInt(i);
+			y = values.get(x);
+			values.set(x, values.get(i));
+			values.set(i, y);
+			
+		}
+		
+		return values;
+		
+	}
 	
 	//toString method
 	public String toString() 
