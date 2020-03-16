@@ -15,18 +15,18 @@ public class SAT_List {
              "row/row/dbn", "row/row/number_of_test_takers",
              "row/row/critical_reading_mean", "row/row/mathematics_mean", "row/row/writing_mean");
       
-      double difference = 0;
-      String temp = "";
+      int temp = 0;
+      School difference = new School(null, null, 0, 0, 0, 0);
+      for (School schl : allschools) {
+          if (schl.difference() > temp) {
+        	  temp = (int) schl.difference();
+        	  //System.out.println(temp);
+        	  difference = schl;
+          }
+       }
       
-      for (int i = 0; i < allschools.size()-1; i++) {
-    	  if (Math.abs((allschools.get(i).getReading() - allschools.get(i).getWriting())) > Math.abs((allschools.get(i+1).getReading() - allschools.get(i+1).getWriting()))) {
-    		  difference = Math.abs(allschools.get(i).getReading() - allschools.get(i).getWriting());
-    		  temp = allschools.get(i).getName();
-    	  }
-      }
-      
-      System.out.println("School with largest difference between mean reading and writing scores: " + temp);
-      System.out.println("Difference: " + difference);
+      System.out.println("School with largest difference between mean reading and writing scores: " + difference.getName());
+      System.out.println("Difference: " + temp);
       
    }   
 }

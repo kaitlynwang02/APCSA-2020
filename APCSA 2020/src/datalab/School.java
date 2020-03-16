@@ -34,4 +34,8 @@ public class School {
 	   return writing;
    }
    
+   public double difference() {
+	      return Math.abs(this.getReading() - this.getWriting());
+	   }
+   
 }
