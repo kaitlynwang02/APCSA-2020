@@ -16,16 +16,15 @@ public class SAT_List {
              "row/row/critical_reading_mean", "row/row/mathematics_mean", "row/row/writing_mean");
       
       int temp = 0;
-      School difference = new School(null, null, 0, 0, 0, 0);
+      School largest = new School(null, null, 0, 0, 0, 0);
       for (School schl : allschools) {
           if (schl.difference() > temp) {
         	  temp = (int) schl.difference();
-        	  //System.out.println(temp);
-        	  difference = schl;
+        	  largest = schl;
           }
        }
       
-      System.out.println("School with largest difference between mean reading and writing scores: " + difference.getName());
+      System.out.println("School with largest difference between mean reading and writing scores: " + largest.getName());
       System.out.println("Difference: " + temp);
       
    }   
