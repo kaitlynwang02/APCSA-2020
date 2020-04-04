@@ -37,9 +37,9 @@ public class Owner
 		mydogWeights = new Weights(weight);
 	}
 	
-	public void setWeight(int spot, double weight)
+	public void setWeightInd(int spot, double weight)
 	{
-		mydogWeights.setWeight(spot, weight);
+		mydogWeights.setWeightInd(spot, weight);
 	} 
 	
 	public Weights getWeight() 

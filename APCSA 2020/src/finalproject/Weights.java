@@ -25,23 +25,27 @@ public class Weights
 		setWeights(weight);		
 	}
 	
+	@SuppressWarnings("resource")
 	public void setWeights(String weight)
 	{
 		
-		@SuppressWarnings("resource")
+		double temp = 0.0;
 		Scanner test = new Scanner(weight);
 		weights = new ArrayList<Double>();
 		
 		int size = test.nextInt();
-		test.hasNext();
+		//System.out.println(size);
+		test.next();
 		
 		for (int i = 0; i < size; i++) {
-			weights.add(test.nextDouble());
+			temp = test.nextDouble();
+			//out.println(temp);
+			weights.add(temp);
 		}
 		
 	}
 	
-	public void setWeight(int index, double weight)
+	public void setWeightInd(int index, double weight)
 	{
 		weights.set(index,  weight);
 	}
@@ -131,6 +135,7 @@ public class Weights
 		else
 			return "none";
 	}
+
 	
 	public String toString()
 	{

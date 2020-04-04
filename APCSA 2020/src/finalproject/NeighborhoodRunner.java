@@ -41,6 +41,7 @@ public class NeighborhoodRunner
 		out.println("\n\n"+theNeighborhood);
 		
 		out.println("Owners with Dogs at Perfect Weight = " + theNeighborhood.target());
+		//out.println("Owners with Obese Dogs = " + )
 		out.println("Highest Average = " + theNeighborhood.getOwnerWithHighestAverage());
 		out.println("Lowest Average = " + theNeighborhood.getOwnerWithLowestAverage());
 		

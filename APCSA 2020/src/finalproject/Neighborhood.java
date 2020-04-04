@@ -110,6 +110,19 @@ public class Neighborhood
 		return targetNames;
 	}
 	
+	/*public String[] obese()
+	{
+		String[] targetNames2 = new String[0];
+		for (int i = 0; i < targetNames2.length; i++) {
+		for (Owner o : ownerList)
+		{
+			if (o.getWeight().obesity().equals
+				targetNames2[i] = o.getName();
+		}
+		}
+		return targetNames2;
+	}*/
+	
 	public String toString()
 	{
 		String output=""+getNeighborhoodName()+"\n";
