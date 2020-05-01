@@ -32,8 +32,6 @@ import java.awt.event.ActionListener;
 
 		public Pong()
 		{
-			//set up all variables related to the game
-			//ball = new Ball();
 			ball = new BlinkyBall();
 			ball.setColor(Color.GREEN);
 			leftPaddle = new Paddle(5, 10, 5, 10, 100);
@@ -45,9 +43,6 @@ import java.awt.event.ActionListener;
 			leftScore = 0;
 			rightScore = 0;
 			
-			//ball.setXSpeed(3);
-			//ball.setYSpeed(3);
-			//back = new BufferedImage();
 
 			keys = new boolean[4];
 		
@@ -58,7 +53,7 @@ import java.awt.event.ActionListener;
 			JOptionPane.showMessageDialog(null, "WZ / IM to move. R to restart.");
 			
 			new Thread(this).start();
-			addKeyListener(this);		//starts the key thread to log key strokes
+			addKeyListener(this);		
 		}
 		
 	   public void update(Graphics window){
@@ -89,15 +84,9 @@ import java.awt.event.ActionListener;
 			  
 			   return;
 		   }
-		   
-			//set up the double buffering to make the game animation nice and smooth
-			
-
 			
 			back = (BufferedImage)(createImage(getWidth(),getHeight()));	
 			
-			//create a graphics reference to the back ground image
-			//we will draw all changes on the background image
 			Graphics graphToBack = back.createGraphics();
 
 			ball.moveAndDraw(graphToBack);
@@ -107,13 +96,12 @@ import java.awt.event.ActionListener;
 			
 			if(keys[0] == true)
 			{
-				//move left paddle up and draw it on the window
+				
 				leftPaddle.moveDownAndDraw(window);
 			}
 			if(keys[1] == true)
 			{
-				//move left paddle down and draw it on the window
-				
+							
 				leftPaddle.moveUpAndDraw(window);
 			}
 			if(keys[2] == true)
@@ -126,22 +114,7 @@ import java.awt.event.ActionListener;
 				rightPaddle.moveUpAndDraw(window);
 			}
 
-			//see if ball hits left wall or right wall
-			/*if(!(ball.getX()>=10 && ball.getX()<=730))
-			{
-				ball.setXSpeed(0);
-				ball.setYSpeed(0);
-			}
 			
-			//see if the ball hits the top or bottom wall 
-			if(!(ball.getY()>=10 && ball.getY()<=550))
-			{
-				ball.setYSpeed(-ball.getYSpeed());
-			}
-			
-			*/
-			
-			//window.setColor(Color.BLACK);
 			
 			if (ball.didCollideLeft(null)) {
 				ball.setXSpeed(0);
@@ -193,9 +166,6 @@ import java.awt.event.ActionListener;
 			if (rightPaddle.getY() > 500)
 				rightPaddle.setY(500);
 			
-			
-
-			//see if the paddles need to be moved
 
 			twoDGraph.drawImage(back, null, 0, 0);
 		   
@@ -206,7 +176,7 @@ import java.awt.event.ActionListener;
 			try {
 				Thread.sleep(4);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 			
@@ -235,8 +205,7 @@ import java.awt.event.ActionListener;
 				case 'R':
 					
 					ball = new BlinkyBall();
-					//ball.setXSpeed(3);
-					//ball.setYSpeed(3);
+					
 					gameOver = false;
 					break;
 			}

@@ -47,12 +47,6 @@ public class Block implements Locatable
 		color = c;
 	}
 
-
-
-	//add other Block constructors - x , y , width, height, color
-	
-	
-	
 	public Block(int xPos, int yPos) {
 		this.xPos = xPos;
 		this.yPos = yPos;
@@ -62,11 +56,6 @@ public class Block implements Locatable
 	}
 	
 	
-	
-	
-	
-	
-	
 	public int getWidth() {
 		return width;
 	}
@@ -74,10 +63,8 @@ public class Block implements Locatable
 	public int getHeight() {
 		return height;
 	}
-	
-   //add the other set methods
-   
 
+	
    public void setColor(Color col)
    {
 	   color = col;
@@ -87,6 +74,7 @@ public class Block implements Locatable
    public Color getColor() {
 	   return color;
    }
+   
    
    public void draw(Graphics window)
    {
@@ -101,46 +89,38 @@ public class Block implements Locatable
    
 	public boolean equals(Object obj)
 	{
-
-
-
-
 		return this == obj;
 	}
 
 	@Override
 	public void setPos(int x, int y) {
-		// TODO Auto-generated method stub
+		
 		setX(x);
 		setY(y);
 	}
 
 	@Override
 	public void setX(int x) {
-		// TODO Auto-generated method stub
+		
 		xPos = x;
 	}
 
 	@Override
 	public void setY(int y) {
-		// TODO Auto-generated method stub
+		
 		yPos = y;
 	}
 
 	@Override
 	public int getX() {
-		// TODO Auto-generated method stub
+		
 		return xPos;
 	}
 
 	@Override
 	public int getY() {
-		// TODO Auto-generated method stub
+		
 		return yPos;
 	}   
 
-   //add the other get methods
-    
-
-   //add a toString() method  - x , y , width, height, color
 }

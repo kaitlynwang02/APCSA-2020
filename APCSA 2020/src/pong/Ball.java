@@ -13,8 +13,6 @@ public class Ball extends Block implements Collidable
 
 	public Ball()
 	{
-		//super(200,200);
-		
 		super ((int)(Math.random() * 450) + 20, (int)(Math.random() * 450) + 20);
 		
 		xSpeed = 3;
@@ -34,14 +32,9 @@ public class Ball extends Block implements Collidable
 		   setColor(Color.GREEN);
 	}
 
-	//add the other Ball constructors
-	
-	   
-   //add the set methods
-   
 
    public Ball(int i, int j, int k, int l, Color blue) {
-		// TODO Auto-generated constructor stub
+		
 	   super(i, j);
 	   xSpeed = k;
 	   ySpeed = l;
@@ -51,47 +44,41 @@ public class Ball extends Block implements Collidable
 	}
 
    public Ball(int i, int j, int k, int l) {
-	// TODO Auto-generated constructor stub
 	   
 	   super(i, j);
 	   xSpeed = k;
 	   ySpeed = l;
-	   
 	   width = 20;
 	   height = 20;
 }
 
-public Ball(int i, int j) {
-	// TODO Auto-generated constructor stub
+   public Ball(int i, int j) {
 	
-	super(i, j);
-	width = 20;
+	   super(i, j);
+	   width = 20;
 	   height = 20;
 }
 
-public Ball(int i, int j, int k, int l, Color blue, int m, int n) {
-	// TODO Auto-generated constructor stub
+   public Ball(int i, int j, int k, int l, Color blue, int m, int n) {
 	
-	 super(i, j);
+	   super(i, j);
 	   xSpeed = k;
 	   ySpeed = l;
 	   setColor(blue);
-
 	   width = m;
 	   height = l;
 }
 
-public Ball(int x, int y, int wid, int ht, int xSpd, int ySpd) {
-	super(x, y);
+   public Ball(int x, int y, int wid, int ht, int xSpd, int ySpd) {
+	   super(x, y);
 	   xSpeed = xSpd;
 	   ySpeed = ySpd;
 	   setColor(Color.GREEN);
-
 	   width = wid;
 	   height = ht;
 }
 
-public void moveAndDraw(Graphics window)
+   public void moveAndDraw(Graphics window)
    {
 	  setX(getX()+xSpeed);
 	  setY(getY()+ySpeed);
@@ -110,7 +97,7 @@ public void moveAndDraw(Graphics window)
 	}
 
 	public int getXSpeed() {
-		// TODO Auto-generated method stub
+		
 		return xSpeed;
 	}
 
@@ -120,40 +107,37 @@ public void moveAndDraw(Graphics window)
 	}
 
 	public int getYSpeed() {
-		// TODO Auto-generated method stub
+		
 		return ySpeed;
 	}
 
 	public void setYSpeed(int i) {
-		// TODO Auto-generated method stub
+		
 		ySpeed = i;
 	}
 
 	@Override
 	public boolean didCollideLeft(Object obj) {
-		// TODO Auto-generated method stub
+		
 		return getX()<=10;
 	}
 
 	@Override
 	public boolean didCollideRight(Object obj) {
-		// TODO Auto-generated method stub
+		
 		return getX()>=730;
 	}
 
 	@Override
 	public boolean didCollideTop(Object obj) {
-		// TODO Auto-generated method stub
+		
 		return getY()<=10;
 	}
 
 	@Override
 	public boolean didCollideBottom(Object obj) {
-		// TODO Auto-generated method stub
+		
 		return getY()>=550;
 	}   
 
-   //add the get methods
-
-   //add a toString() method
 }

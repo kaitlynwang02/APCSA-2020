@@ -10,7 +10,6 @@ import java.util.Random;
 class BlinkyBall extends Ball
 {
 
-   //constructors
    public BlinkyBall()
    {
 		super();
@@ -26,30 +25,30 @@ class BlinkyBall extends Ball
    public BlinkyBall(int x, int y, int wid, int ht)
    {
 
-super(x, y, wid, ht);
+	   super(x, y, wid, ht);
 
    }
 
    public BlinkyBall(int x, int y, int wid, int ht, int xSpd, int ySpd)
    {
 
-super(x,y, wid, ht, xSpd, ySpd);
+	   super(x,y, wid, ht, xSpd, ySpd);
 
    }
 
    public BlinkyBall(int x, int y, int wid, int ht, Color col, int xSpd, int ySpd)
    {
 
-super (x, y, wid, ht, col, xSpd, ySpd);
+	   super (x, y, wid, ht, col, xSpd, ySpd);
 
 
    }
 
    public Color randomColor()
    {
-   		int r = (int) (Math.random() * 256);		//
- 		int g = (int)(Math.random() * 256);		//
- 		int b = (int) (Math.random() * 256);		//
+   		int r = (int) (Math.random() * 256);		
+ 		int g = (int)(Math.random() * 256);		
+ 		int b = (int) (Math.random() * 256);		
  		return new Color(r,g,b);
    }
 
@@ -57,7 +56,6 @@ super (x, y, wid, ht, col, xSpd, ySpd);
    {
 
 	   	setColor(randomColor());
-	   	//System.out.println(randomColor());
 	   	super.moveAndDraw(window);
 
    }
