@@ -9,7 +9,8 @@ import java.awt.Image;
 import java.io.File;
 import javax.imageio.ImageIO;
 
-public class Ammo extends MovingThing {
+public class Ammo extends MovingThing 
+{
 	private int speed;
 	private boolean alive = true;
 

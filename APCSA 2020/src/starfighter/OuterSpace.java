@@ -75,7 +75,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 			back = (BufferedImage) (createImage(getWidth(), getHeight()));
 		Graphics graphToBack = back.createGraphics();
 		graphToBack.setColor(Color.BLUE);
-		graphToBack.drawString("StarFighter ", 25, 50);
+		graphToBack.drawString("StarFighter II", 25, 50);
 		graphToBack.setColor(Color.BLACK);
 		graphToBack.fillRect(0, 0, 800, 600);
 		if (!horde.endGame(ship) || round == 0) {
@@ -108,13 +108,13 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 					lazerAmmo--;
 				}
 			}
-			shots.drawEmAll(graphToBack);
-			shots.moveEmAll();
-			horde.drawEmAll(graphToBack);
+			shots.drawAll(graphToBack);
+			shots.moveAll();
+			horde.drawAll(graphToBack);
 			ship.draw(graphToBack);
-			horde.moveEmAll();
-			horde.removeDeadOnes(shots);
-			shots.cleanEmUp();
+			horde.moveAll();
+			horde.removeDead(shots);
+			shots.clean();
 			if (horde.getSize() == 0) {
 				if (af1 && af2) {
 					r = ran.nextInt(1);
@@ -139,8 +139,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 			graphToBack.drawString("GAME", 25, 300 - 40);
 			graphToBack.drawString("OVER", 25, 510 - 40);
 			shots.end();
-			shots.drawEmAll(graphToBack);
-			horde.drawEmAll(graphToBack);
+			shots.drawAll(graphToBack);
+			horde.drawAll(graphToBack);
 			ship.draw(graphToBack);
 		}
 		graphToBack.setFont(new Font(Font.SANS_SERIF, 24, 24));
@@ -149,7 +149,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 			graphToBack.drawString("Warm-Up", 335, 30);
 			graphToBack.drawString("LAZER AMMO: " + lazerAmmo, 550, 30);
 			if (lazer == true) {
-				graphToBack.drawString("bullets = spacebar | lazer beam = v", 110, 530);
+				graphToBack.drawString("bullets = spacebar | lazer beam = v", 191, 530);
 			} else {
 				graphToBack.drawString("bullets = spacebar | lazer beam = v",
 						191, 530);

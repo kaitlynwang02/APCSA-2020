@@ -31,7 +31,7 @@ public class AlienHorde {
 		aliens.add(al);
 	}
 
-	public void drawEmAll(Graphics window) {
+	public void drawAll(Graphics window) {
 		if (getSize() > 0) {
 			for (Alien a : aliens) {
 				a.draw(window);
@@ -52,7 +52,7 @@ public class AlienHorde {
 		}
 	}
 
-	public void moveEmAll() {
+	public void moveAll() {
 		if (getSize() > 0) {
 			if (aliens.get(0).getX() <= 0) {
 				right = true;
@@ -86,7 +86,7 @@ public class AlienHorde {
 
 	}
 
-	public void removeDeadOnes(Bullets shots) {
+	public void removeDead(Bullets shots) {
 		if (getSize() > 0) {
 			for (int i = 0; i < getSize(); i++) {
 				if (shots.getSize() > 0) {
